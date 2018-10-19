@@ -1635,6 +1635,12 @@ body{
   }
 }
 
+.main-top p:before{
+  position:relative;
+  top:.2em;
+  margin-right:.4em;
+}
+
 .city-phone{
   display:none;
   margin:0;
@@ -1653,7 +1659,7 @@ body{
 
 [class^=icon-]:before{
   position:relative;
-  top:.1em;
+  top:.5em;
 }
 
 /*# sourceMappingURL=styles.css.map */
