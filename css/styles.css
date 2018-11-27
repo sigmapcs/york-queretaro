@@ -967,6 +967,89 @@ p:last-child,p:nth-child(only){
   }
 }
 
+.modal{
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:5;
+  width:100%;
+  min-height:100vh;
+  background-color:rgba(0,0,0,.9);
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-pack:center;
+      -ms-flex-pack:center;
+          justify-content:center;
+  -webkit-box-align:center;
+      -ms-flex-align:center;
+          align-items:center;
+}
+
+.modal__container{
+  width:90% !important;
+  position:relative;
+  max-width:600px;
+  height:auto;
+  margin:0 auto;
+  width:auto;
+}
+
+.modal__container img{
+  height:100%;
+  width:100%;
+  -o-object-fit:cover;
+     object-fit:cover;
+  -o-object-position:center;
+     object-position:center;
+}
+
+.modal__close{
+  height:3rem;
+  width:3rem;
+  position:absolute;
+  right:0;
+  top:0;
+  -webkit-transform:translateY(-100%);
+          transform:translateY(-100%);
+  cursor:pointer;
+  background-color:transparent;
+  transition:background-color .3s;
+}
+
+@media screen and (min-width:640px){
+  .modal__close{
+    -webkit-transform:translate(calc(100% + 1em),calc((100% + 1em) * -1));
+            transform:translate(calc(100% + 1em),calc((100% + 1em) * -1));
+  }
+}
+
+.modal__close:hover{
+  background-color:rgba(0,0,0,.3);
+}
+
+.modal__close:after,.modal__close:before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:50%;
+  height:100%;
+  width:2px;
+  -webkit-transform-origin:center;
+          transform-origin:center;
+  background-color:#fff;
+}
+
+.modal__close:before{
+  -webkit-transform:translateX(-50%) rotate(-45deg);
+          transform:translateX(-50%) rotate(-45deg);
+}
+
+.modal__close:after{
+  -webkit-transform:translateX(-50%) rotate(45deg);
+          transform:translateX(-50%) rotate(45deg);
+}
+
 .main-header{
   position:absolute;
   z-index:2;
@@ -1508,11 +1591,11 @@ body{
 
 .box-container{
   width:100%;
-  margin:0 auto 1em;
+  margin:0 auto;
   display:-ms-grid;
   display:grid;
-  -ms-grid-columns:60px 1fr;
-      grid-template-columns:60px 1fr;
+  -ms-grid-columns:170px 1fr;
+      grid-template-columns:170px 1fr;
   grid-gap:1em;
 }
 

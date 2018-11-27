@@ -143,6 +143,22 @@ $(function () {
   }
 });
 
+var imgPath = 'images/';
+var imgSliderArray = [imgPath + 'slider1.jpeg', imgPath + 'slider2.jpeg'];
+
+var createModalStart = function createModalStart(w, d, c) {
+  // const sliderContainer = d.querySelector('#modalStart > .modal__container'),
+  //     sliderHeight = sliderContainer.clientHeight
+  // console.log(sliderHeight)
+
+};
+
+(function (w, d, c) {
+  d.addEventListener('load', function (e) {
+    createModalStart(w, d, c);
+  });
+})(window, document, console.log);
+
 $(function () {
   var body = $('body');
   // let body = document.body;
