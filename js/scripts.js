@@ -22,6 +22,7 @@
 //   });
 //
 // })(document,window);
+;
 
 (function (d, w, c) {
   var dHeight = w.height();
@@ -75,15 +76,25 @@ $(function () {
           type = $(this).attr('method');
       $.ajax({
         url: url,
+        crossDomain: true,
         type: type,
         dataType: 'json',
         data: data,
         success: function success(res) {
           console.log(res);
           var resul = $('#result');
-          resul.removeClass('error');
-          resul.slideDown();
-          $('#send').text('Enviado').attr('disabled', 'true').css({ background: '#ccc', color: 'green', cursor: 'none' });
+          if (res.status) {
+            resul.removeClass('error');
+            resul.slideDown();
+            $('#send').text('Enviado').attr('disabled', 'true').css({ background: '#ccc', color: 'green', cursor: 'none' });
+          } else {
+            resul.addClass('error');
+            resul.slideDown();
+            setTimeout(function () {
+              resul.slideUp();
+              // resul.removeClass('error');
+            }, 3000);
+          }
         },
         error: function error() {
           var resul = $('#result');
@@ -159,7 +170,7 @@ var createModalStart = function createModalStart(w, d, c) {
   });
 })(window, document, console.log);
 
-$(function () {
+(function () {
   var body = $('body');
   // let body = document.body;
   if (body.hasClass('page-gdl')) {
