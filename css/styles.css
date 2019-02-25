@@ -1734,6 +1734,17 @@ body{
   display:block;
 }
 
+.city-phone a{
+  margin-left:.5em;
+  color:green;
+}
+
+.city-phone .whatsapp:before{
+  position:relative;
+  top:3px;
+  margin-right:.5em;
+}
+
 .qrt{
   font-size:.9em;
   padding:0;
